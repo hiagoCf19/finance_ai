@@ -12,8 +12,6 @@ interface ExpensesPerCategoryProps {
 const ExpensesPerCategory = ({
   expensesPerCategory,
 }: ExpensesPerCategoryProps) => {
-  console.log("expenses");
-  console.log(expensesPerCategory);
   return (
     <ScrollArea className="col-span-2 h-full rounded-md border pb-6">
       <CardHeader>
