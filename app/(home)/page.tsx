@@ -28,12 +28,12 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   return (
     <>
       <NavBAr />
-      <div className="flex h-full flex-col space-y-6 overflow-hidden p-6">
+      <div className="flex h-full flex-col space-y-6 overflow-hidden p-4 md:p-6">
         <div className="flex justify-between">
-          <h1 className="text-2xl font-bold">Dashboard</h1>
-          <div className="flex items-center gap-3">
-            <AiReportButton month={month} />
+          <h1 className="hidden text-2xl font-bold md:block">Dashboard</h1>
+          <div className="flex w-full justify-between gap-3 md:w-auto md:flex-row-reverse md:items-center">
             <TimeSelect />
+            <AiReportButton month={month} />
           </div>
         </div>
         <div className="grid h-full grid-cols-[2fr,1fr] gap-6 overflow-hidden">
