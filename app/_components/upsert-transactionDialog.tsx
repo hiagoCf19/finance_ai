@@ -76,7 +76,6 @@ const UpsertTransactionDialog = ({
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: defaultValues ?? {
-      amount: 0,
       category: TransactionCategory.OTHER,
       date: new Date(),
       name: "",
@@ -104,7 +103,7 @@ const UpsertTransactionDialog = ({
       }}
     >
       <DialogTrigger asChild></DialogTrigger>
-      <DialogContent>
+      <DialogContent className="w-[95%] rounded-md">
         <DialogHeader>
           <DialogTitle>
             {isUpdate ? "Atualizar" : "Adicionar Transação"}
@@ -250,7 +249,11 @@ const UpsertTransactionDialog = ({
                   Cancelar
                 </Button>
               </DialogClose>
-              <Button variant={"default"} type="submit">
+              <Button
+                variant={"default"}
+                type="submit"
+                className="my-4 md:my-0"
+              >
                 {isUpdate ? "Atualizar" : "Adicionar"}
               </Button>
             </DialogFooter>

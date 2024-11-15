@@ -7,7 +7,7 @@ import { isMatch } from "date-fns";
 import TransactionsPieChart from "./_components/transactions-pie-chart";
 import { getDashboard } from "../_data/get-dashboard";
 import ExpensesPerCategory from "./_components/expenses-per-category";
-import LastTransactions from "./_components/last-tramsactions";
+import LastTransactions from "./_components/last-transactions";
 import AiReportButton from "./_components/ai-report-button";
 interface HomeProps {
   searchParams: {
@@ -28,7 +28,7 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
   return (
     <>
       <NavBAr />
-      <div className="flex h-full flex-col space-y-6 overflow-hidden p-4 md:p-6">
+      <div className="flex h-full flex-col space-y-6 p-4 md:overflow-hidden md:p-6">
         <div className="flex justify-between">
           <h1 className="hidden text-2xl font-bold md:block">Dashboard</h1>
           <div className="flex w-full justify-between gap-3 md:w-auto md:flex-row-reverse md:items-center">
@@ -36,10 +36,10 @@ const Home = async ({ searchParams: { month } }: HomeProps) => {
             <AiReportButton month={month} />
           </div>
         </div>
-        <div className="grid h-full grid-cols-[2fr,1fr] gap-6 overflow-hidden">
-          <div className="flex flex-col gap-6 overflow-hidden">
+        <div className="grid h-full gap-6 md:grid-cols-[2fr,1fr] md:overflow-hidden">
+          <div className="flex flex-col gap-6 md:overflow-hidden">
             <SummaryCards month={month} {...dashboard} />
-            <div className="grid h-full grid-cols-3 grid-rows-1 gap-6 overflow-hidden">
+            <div className="hidden h-full grid-cols-3 grid-rows-1 gap-6 md:grid md:overflow-hidden">
               <TransactionsPieChart {...dashboard} />
               <ExpensesPerCategory
                 expensesPerCategory={dashboard.totalExpensePerCategory}

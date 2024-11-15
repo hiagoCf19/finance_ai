@@ -41,6 +41,8 @@ enum TransactionCategory {
   UTILITY
   SALARY
   EDUCATION
+  TRIP
+  INVOICES
   OTHER
 }
 

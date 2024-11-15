@@ -24,6 +24,8 @@ export const TRANSACTION_CATEGORY_LABELS = {
   SALARY: "Salário",
   TRANSPORTATION: "Transporte",
   UTILITY: "Utilidades",
+  TRIP: "Viagem",
+  INVOICES: "Faturas",
 };
 
 export const TRANSACTION_PAYMENT_METHOD_LABELS = {
@@ -122,5 +124,13 @@ export const TRANSACTION_CATEGORY_OPTIONS = [
   {
     value: TransactionCategory.UTILITY,
     label: TRANSACTION_CATEGORY_LABELS[TransactionCategory.UTILITY],
+  },
+  {
+    value: TransactionCategory.TRIP,
+    label: TRANSACTION_CATEGORY_LABELS[TransactionCategory.TRIP],
+  },
+  {
+    value: TransactionCategory.INVOICES,
+    label: TRANSACTION_CATEGORY_LABELS[TransactionCategory.INVOICES],
   },
 ];

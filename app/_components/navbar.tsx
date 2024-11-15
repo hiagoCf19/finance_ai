@@ -11,7 +11,12 @@ import {
   DrawerTrigger,
 } from "@/app/_components/ui/drawer";
 import { Button } from "./ui/button";
-import { ArrowRightLeftIcon, ChartLineIcon, MenuIcon } from "lucide-react";
+import {
+  ArrowRightLeftIcon,
+  ChartLineIcon,
+  MenuIcon,
+  Wallet2Icon,
+} from "lucide-react";
 
 const NavBAr = () => {
   const pathname = usePathname();
@@ -49,24 +54,24 @@ const NavBAr = () => {
           <DrawerHeader>
             <DrawerTitle>Menu</DrawerTitle>
           </DrawerHeader>
-          <div className="m-4 flex gap-4">
+          <div className="m-4 grid grid-cols-3 gap-2">
             <Button
-              className="flex aspect-square h-1/3 w-1/3 items-center justify-center"
+              className="flex h-full items-center justify-center"
               disabled={pathname === "/"}
               variant={"outline"}
             >
               <Link href={"/"}>
                 <div className="flex flex-col items-center justify-center space-y-4">
-                  <ChartLineIcon size={32} className="mt-2 text-primary" />
+                  <Wallet2Icon size={32} className="mt-2 text-primary" />
                   <div className="flex flex-col items-center justify-center text-center">
-                    <span className="text-sm">Meu</span>
-                    <p className="text-base font-bold">Dashboard</p>
+                    <span className="text-sm">Minha</span>
+                    <p className="text-base font-bold">Carteira</p>
                   </div>
                 </div>
               </Link>
             </Button>
             <Button
-              className="flex aspect-square h-1/3 w-1/3 items-center justify-center"
+              className="flex h-full items-center justify-center"
               variant={"outline"}
               disabled={pathname === "/transactions"}
             >
@@ -76,6 +81,21 @@ const NavBAr = () => {
                   <div className="flex flex-col items-center justify-center text-center">
                     <span className="text-sm">Minhas</span>
                     <p className="text-base font-bold">Transações</p>
+                  </div>
+                </div>
+              </Link>
+            </Button>
+            <Button
+              className="flex h-full items-center justify-center"
+              variant={"outline"}
+              disabled={pathname === "/statistics"}
+            >
+              <Link href={"/statistics"}>
+                <div className="flex flex-col items-center justify-center space-y-4">
+                  <ChartLineIcon size={23} className="text-primary" />
+                  <div className="flex flex-col items-center justify-center text-center">
+                    <span className="text-sm">Meu</span>
+                    <p className="text-base font-bold">Dashboard</p>
                   </div>
                 </div>
               </Link>

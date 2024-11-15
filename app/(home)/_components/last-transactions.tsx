@@ -4,6 +4,7 @@ import { ScrollArea } from "@/app/_components/ui/scroll-area";
 import { TRANSACTION_PAYMENT_METHOD_ICONS } from "@/app/_constants/transactions";
 import { formatCurrency } from "@/app/_utils/currency";
 import { Transaction, TransactionType } from "@prisma/client";
+import { PlusIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -27,14 +28,28 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
     return "-";
   };
   return (
-    <ScrollArea className="rounded-md border">
+    <ScrollArea className="mb-4 rounded-md border md:mb-0">
       <CardHeader className="flex-row items-center justify-between">
         <CardTitle className="font-bold">Últimas Transações</CardTitle>
-        <Button variant={"outline"} className="rounded-xl font-bold" asChild>
+        <Button
+          variant={"outline"}
+          size={"icon"}
+          className="rounded-md font-bold md:hidden"
+          asChild
+        >
+          <Link href={"/transactions"}>
+            <PlusIcon />{" "}
+          </Link>
+        </Button>
+        <Button
+          variant={"outline"}
+          className="hidden rounded-xl font-bold md:block"
+          asChild
+        >
           <Link href={"/transactions"}>Ver mais</Link>
         </Button>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-4 md:space-y-6">
         {lastTransactions.map((transaction) => (
           <div
             className="flex items-center justify-between"
@@ -52,8 +67,10 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
                 />
               </div>
               <div>
-                <p className="text-sm font-bold">{transaction.name}</p>
-                <p className="text-sm text-muted-foreground">
+                <p className="w-[75%] truncate text-sm font-bold">
+                  {transaction.name}
+                </p>
+                <p className="text-xs text-muted-foreground md:text-sm">
                   {new Date(transaction.date).toLocaleString("pr-BR", {
                     day: "2-digit",
                     month: "short",
@@ -62,7 +79,9 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
                 </p>
               </div>
             </div>
-            <p className={`text-sm font-bold ${getAmountColor(transaction)}`}>
+            <p
+              className={`flex truncate text-sm font-bold ${getAmountColor(transaction)}`}
+            >
               {getAmoutPrefix(transaction)}{" "}
               {formatCurrency(Number(transaction.amount))}
             </p>

@@ -2,19 +2,27 @@
 
 import { useState } from "react";
 import UpsertTransactionDialog from "./upsert-transactionDialog";
-import { ArrowDownUpIcon } from "lucide-react";
+import { ArrowDownUpIcon, PlusIcon } from "lucide-react";
 import { Button } from "./ui/button";
-
-const AddTransactionButton = () => {
+interface AddTransactionButtonProps {
+  size?: "full" | "normal";
+}
+const AddTransactionButton = ({
+  size = "normal",
+}: AddTransactionButtonProps) => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
     <>
       <Button
-        className="rounded-xl font-bold"
+        className={`rounded-xl font-bold ${size === "full" && "text-md flex h-full w-full flex-col-reverse md:hidden"}`}
         onClick={() => setIsDialogOpen(true)}
       >
-        <ArrowDownUpIcon />
+        {size === "full" ? (
+          <PlusIcon className="size-12" />
+        ) : (
+          <ArrowDownUpIcon />
+        )}
         Adicionar transação
       </Button>
       <UpsertTransactionDialog
