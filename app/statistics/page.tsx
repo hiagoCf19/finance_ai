@@ -23,7 +23,7 @@ const Statistics = async ({ searchParams: { month } }: HomeProps) => {
   return (
     <>
       <NavBAr />
-      <h1 className="p-4 pb-0 text-2xl font-bold">DashBoard</h1>
+      <h1 className="p-4 pb-0 text-2xl font-bold">Estatísticas</h1>
       <div className="flex flex-col gap-4 p-4">
         <TransactionsPieChart {...dashboard} />
         <ExpensesPerCategory

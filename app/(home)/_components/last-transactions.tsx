@@ -49,7 +49,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
           <Link href={"/transactions"}>Ver mais</Link>
         </Button>
       </CardHeader>
-      <CardContent className="space-y-4 md:space-y-6">
+      <CardContent className="space-y-4 px-2 md:space-y-6">
         {lastTransactions.map((transaction) => (
           <div
             className="flex items-center justify-between"
@@ -67,7 +67,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
                 />
               </div>
               <div>
-                <p className="w-[75%] truncate text-sm font-bold">
+                <p className="w-[77%] truncate text-sm font-bold">
                   {transaction.name}
                 </p>
                 <p className="text-xs text-muted-foreground md:text-sm">
@@ -82,7 +82,7 @@ const LastTransactions = ({ lastTransactions }: LastTransactionsProps) => {
             <p
               className={`flex truncate text-sm font-bold ${getAmountColor(transaction)}`}
             >
-              {getAmoutPrefix(transaction)}{" "}
+              {getAmoutPrefix(transaction)}
               {formatCurrency(Number(transaction.amount))}
             </p>
           </div>
