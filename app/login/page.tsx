@@ -12,10 +12,10 @@ const Login = async () => {
   }
 
   return (
-    <div className="grid h-full grid-cols-2">
+    <div className="h-full grid-cols-2 md:grid">
       <div className="mx-auto flex h-full max-w-[550px] flex-col justify-center space-y-4 p-8">
         <Image src="/logo.svg" width={173} height={39} alt="finance AI" />
-        <h1 className="text-center text-4xl font-bold text-muted-foreground">
+        <h1 className="text-center text-4xl font-bold text-primary md:text-muted-foreground">
           Bem vindo
         </h1>
         <p className="mb-8">
@@ -31,7 +31,7 @@ const Login = async () => {
         </SignInButton>
       </div>
       {/* DIREITA */}
-      <div className="relative h-full w-full">
+      <div className="relative hidden h-full w-full sm:block">
         <Image
           src="/login.png"
           alt="Faça login"
