@@ -23,7 +23,7 @@ const TransactionsPage = async () => {
       <div className="space-y-6 p-6">
         {/* TÍTULO E BOTÃO */}
         <div className="flex w-full items-center justify-between">
-          <h1 className="text-2xl font-bold">Transações</h1>
+          <h1 className="font-bold md:text-2xl">Transações</h1>
           <AddTransactionButton />
         </div>
         <ScrollArea className="h-[83vh] rounded-md border">

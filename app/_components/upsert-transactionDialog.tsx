@@ -108,7 +108,6 @@ const UpsertTransactionDialog = ({
           <DialogTitle>
             {isUpdate ? "Atualizar" : "Adicionar Transação"}
           </DialogTitle>
-          <DialogDescription>Insira as informações a baixo.</DialogDescription>
         </DialogHeader>
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-2">
@@ -236,7 +235,7 @@ const UpsertTransactionDialog = ({
               name="date"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Método de pagamento</FormLabel>
+                  <FormLabel>Data</FormLabel>
                   <DatePicker value={field.value} onChange={field.onChange} />
                   <FormMessage />
                 </FormItem>
@@ -244,11 +243,6 @@ const UpsertTransactionDialog = ({
             />
 
             <DialogFooter>
-              <DialogClose asChild>
-                <Button variant={"outline"} type="button">
-                  Cancelar
-                </Button>
-              </DialogClose>
               <Button
                 variant={"default"}
                 type="submit"
